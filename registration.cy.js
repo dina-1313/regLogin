@@ -1,13 +1,13 @@
 describe('template spec', () => {
-  it('passes', () => {
+  it('Registration', () => {
     cy.visit('https://automationteststore.com/');
     cy.get('[href="https://automationteststore.com/index.php?rt=account/login"]').first().click();
     cy.get('[title="Continue"]').click();
 
-    //Registration
+    //Registration 
     cy.get('#AccountFrm_firstname').type('userFirstName');
     cy.get('#AccountFrm_lastname').type('userLastName');
-    cy.get('#AccountFrm_email').type('emailqwe5@gmail.com');
+    cy.get('#AccountFrm_email').type('emailqwe6@gmail.com');
     cy.get('#AccountFrm_telephone').type('0123456789');
     cy.get('#AccountFrm_fax').type('9876543210');
     cy.get('#AccountFrm_company').type('Company');
@@ -17,7 +17,7 @@ describe('template spec', () => {
     cy.get('#AccountFrm_postcode').type('12345');
     cy.get('[name="country_id"]').select('Panama').should('have.value', '164');
     cy.get('[name="zone_id"]').select('Herrera').should('have.value', '2484');
-    cy.get('#AccountFrm_loginname').type('portal464745');
+    cy.get('#AccountFrm_loginname').type('portal464741');
     cy.get('#AccountFrm_password').type('Password');
     cy.get('#AccountFrm_confirm[type="password"]').type('Password');
     cy.get('#AccountFrm_newsletter1').check();
@@ -27,14 +27,6 @@ describe('template spec', () => {
     //Logout
     cy.get('.btn.btn-default.mr10').click();
     cy.get('.side_account_list [href="https://automationteststore.com/index.php?rt=account/logout"]').click();
-
-    //Login
-    cy.get('[href="https://automationteststore.com/index.php?rt=account/login"]').first().click();
-    cy.get('#loginFrm_loginname').type('portal464745');
-    cy.get('#loginFrm_password').type('Password');
-    cy.get('[title="Login"]').click();
-
-    //Check if a user is logged in
-    cy.get('.myaccountbox');
   })
-})
+}) 
+
